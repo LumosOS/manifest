@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="lumos"
+          fetch="https://github.com/lumosOS"
+          revision="pie" />
+
+   <remote name="pixel"
+           fetch="https://github.com/PixelExperience"
+           revision="pie" />
+ 
+  <remote name="pe-lab"
+          fetch="https://gitlab.com/PixelExperience"
+          revision="pie" />
+  
+  <remote name="gitlab"
+          fetch="https://gitlab.com" />
+
+  <!-- CodeAurora additions -->
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="lumos" />
+  <project path="device/qcom/sepolicy-legacy" name="device_qcom_sepolicy-legacy" remote="lumos" />
+  <project path="hardware/qcom/fm" name="hardware_qcom_fm" remote="lumos" />
+  <project path="hardware/qcom/power" name="hardware_qcom_power" remote="lumos" />
+  <project path="vendor/qcom/opensource/cryptfs_hw" name="vendor_qcom_opensource_cryptfs_hw" remote="lumos" />
+
+  <!-- External repos -->
+  <project path="external/e2fsprogs" name="external_e2fsprogs" remote="lumos" />
+  <project path="external/tinycompress" name="external_tinycompress" remote="lumos" />
+
+  <!-- Framework repos -->
+  <project path="frameworks/av" name="frameworks_av" remote="lumos" />
+  <project path="frameworks/base" name="frameworks_base" remote="lumos" />
+  <project path="frameworks/native" name="frameworks_native" remote="lumos" />
+  <project path="frameworks/opt/net/voip" name="frameworks_opt_net_voip" remote="lumos" />
+  <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="lumos" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="lumos" />
+  
+  <!-- General repos -->
+  <project path="bionic" name="bionic" remote="lumos" />
+  <project path="build/make" name="build_make" remote="lumos">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" remote="lumos">
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="bootable/recovery" name="bootable_recovery" remote="lumos" />
+  <project path="device/custom/sepolicy" name="device_custom_sepolicy" remote="lumos" />
+  <project path="manifest" name="manifest" remote="lumos" />
+  <project path="vendor/prisma" name="vendor_prisma" remote="lumos" />
+  <project path="vendor/themes" name="vendor_themes" remote="lumos" />
+  <project path="vendor/gapps" name="vendor_gapps" remote="pe-lab" />
+  
+  <!-- Hardware repos -->
+  <project path="hardware/custom/interfaces" name="hardware_custom_interfaces" remote="lumos" />
+  <project path="hardware/custom/keydisabler" name="hardware_custom_keydisabler" remote="lumos" />
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="lumos" />
+  <project path="hardware/libhardware" name="hardware_libhardware" remote="lumos" />
+  <project path="hardware/ril" name="hardware_ril" remote="lumos" />
+  <project path="hardware/nxp/nfc" name="hardware_nxp_nfc" remote="lumos" />
+
+  <!-- Packages repos -->
+  <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" remote="lumos" />
+  <project path="packages/apps/Camera2" name="packages_apps_Camera2" remote="lumos" />
+  <project path="packages/apps/EmergencyInfo" name="packages_apps_EmergencyInfo" remote="lumos" />
+  <project path="packages/apps/FMRadio" name="packages_apps_FMRadio" remote="lumos" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="lumos" />
+  <project path="packages/apps/SettingsIntelligence" name="packages_apps_SettingsIntelligence" remote="lumos" />
+  <project path="packages/apps/Snap" name="packages_apps_Snap" remote="lumos" />
+  <project path="packages/providers/AmbientPlayHistoryProvider" name="packages_providers_AmbientPlayHistoryProvider" remote="lumos" />
+  <project path="packages/providers/DownloadProvider" name="packages_providers_DownloadProvider" remote="lumos" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="lumos" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="lumos" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="lumos" />
+  <project path="packages/apps/Contacts" name="packages_apps_Contacts" remote="lumos" />
+  <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="lumos" />
+  <project path="packages/apps/Gallery2" name="packages_apps_Gallery2" remote="lumos" />
+  <project path="packages/apps/DocumentsUI" name="packages_apps_DocumentsUI" remote="lumos" />
+  <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="lumos" />
+  <project path="packages/inputmethods/LatinIME" name="packages_inputmethods_LatinIME" remote="lumos" />
+  <project path="packages/apps/PrismaHub" name="packages_apps_PrismaHub" remote="lumos" />
+  <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="lumos" />
+  <!-- Prebuilts -->
+  <project path="prebuilts/clang/host/linux-x86" name="prebuilts_clang_host_linux-x86" remote="prisma" clone-depth="1" />
+
+  <!-- System Repos -->
+  <project path="system/core" name="system_core" remote="lumos" />
+  <project path="system/extras" name="system_extras" remote="lumos" />
+  <project path="system/netd" name="system_netd" remote="lumos" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="lumos" />
+  <project path="system/vold" name="system_vold" remote="lumos" />
+
+</manifest>
