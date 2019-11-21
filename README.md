@@ -29,7 +29,7 @@ repo sync -c -jx --force-sync --no-clone-bundle --no-tags
 $ . build/envsetup.sh
 
 # Choose a target
-$ lunch prisma_$device-userdebug
+$ lunch lumos_$device-userdebug
 
 # Build the code
 $ mka bacon -j8
